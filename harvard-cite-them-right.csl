@@ -145,46 +145,46 @@
     </choose>
   </macro>
   <macro name="publisher">
-    <choose>
-      <if type="thesis">
-        <group delimiter=". ">
-          <text variable="genre"/>
-          <text variable="publisher"/>
-        </group>
-      </if>
-      <else-if type="report">
-        <group delimiter=". ">
-          <group delimiter=" ">
-            <text variable="genre"/>
-            <text variable="number"/>
-          </group>
-          <group delimiter=": ">
-            <text variable="publisher-place"/>
-            <text variable="publisher"/>
-          </group>
-        </group>
-      </else-if>
-      <else-if type="article-newspaper article-magazine" match="none">
-        <group delimiter=" ">
-          <group delimiter=", ">
-            <choose>
-              <if type="speech" variable="event" match="any">
-                <text variable="event" font-style="italic"/>
-              </if>
-            </choose>
-            <group delimiter=": ">
-              <text variable="publisher-place"/>
-              <text variable="publisher"/>
-            </group>
-          </group>
-          <group prefix="(" suffix=")" delimiter=", ">
-            <text variable="collection-title"/>
-            <text variable="collection-number"/>
-          </group>
-        </group>
-      </else-if>
-    </choose>
-  </macro>
+<choose>
+<if type="thesis">
+<group delimiter=". ">
+<text variable="genre"/>
+<text variable="publisher"/>
+</group>
+</if>
+<else-if type="report">
+<group delimiter=". ">
+<group delimiter=" ">
+<text variable="genre"/>
+<text variable="number"/>
+</group>
+<group delimiter=": ">
+<text variable="publisher-place"/>
+<text variable="publisher"/>
+</group>
+</group>
+</else-if>
+<else-if type="article-newspaper article-magazine" match="none">
+<group delimiter=" ">
+<group delimiter=", ">
+<choose>
+<if type="speech" variable="event" match="any">
+<text variable="event" font-style="italic"/>
+</if>
+</choose>
+<group delimiter=": ">
+<text variable="publisher-place"/>
+<text variable="publisher"/>
+</group>
+</group>
+<group prefix="(" suffix=")" delimiter=", ">
+<text variable="collection-title"/>
+<text variable="collection-number"/>
+</group>
+</group>
+</else-if>
+</choose>
+</macro>
   <macro name="year-date">
     <choose>
       <if variable="issued">
